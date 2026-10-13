@@ -2,7 +2,7 @@
 name: implement
 description: Implement a Ready story — Implementer builds in its own worktree, QA verifies against the test plan, state updated. Use as /implement STORY-xxx-nn. Several stories without Conflicts-with overlap may be run in parallel.
 ---
-Argument: one or more story IDs. For each, locate the story file under `docs/epics/open/*/stories/`.
+Argument: one or more story IDs. For each, locate the story file under `{{DOCS_DIR}}/epics/open/*/stories/`.
 
 Preconditions, or stop and say why: story state is `Ready`; its epic is `Ready for Development` or `In-progress`; no listed `Conflicts with:` story is currently `In-progress`.
 

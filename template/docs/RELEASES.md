@@ -33,4 +33,4 @@ Development of a version never waits on this table; the table exists so the work
 
 | Date | Version | Author | Change |
 |---|---|---|---|
-| {{DATE}} | 0.1 | {{OWNER}} | Created from agentic-project-template |
+| {{DATE}} | 0.1 | {{OWNER}} | Created with agent-kit |

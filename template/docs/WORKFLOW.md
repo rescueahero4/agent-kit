@@ -2,7 +2,7 @@
 
 **Status:** v0.1 · 2026-10-10 · [RELEASES.md](RELEASES.md) says *which version* · its PRD says *what/why* · its SA says *how* · this file says *who does what, when*.
 
-**Rule zero: documents are the source of truth.** Agent memory, chat history and caches do not count. If a decision, verdict or lesson is not written into a file under `docs/`, it did not happen.
+**Rule zero: documents are the source of truth.** Agent memory, chat history and caches do not count. If a decision, verdict or lesson is not written into a file under `{{DOCS_DIR}}/`, it did not happen.
 
 ---
 
@@ -12,13 +12,13 @@ Everything hangs off a **target version** in `RELEASES.md`.
 
 ```
 RELEASES.md ─ version ─ PRD-xxx (+ SA-xxx)
-              └─┬─ EPIC-xxx  (docs/epics/open/EPIC-xxx/README.md → docs/epics/closed/ when Done)
+              └─┬─ EPIC-xxx  ({{DOCS_DIR}}/epics/open/EPIC-xxx/README.md → {{DOCS_DIR}}/epics/closed/ when Done)
           │     └─ STORY-xxx-nn  (…/stories/STORY-xxx-nn-short-name.md)
           │            └─ Tasks T1, T2…  (checklist inside the story)
           │                   └─ Sub-tasks T1.1…  (only when a task needs splitting)
           └─ completion-report/EPIC-xxx/  (memos during work, REPORT.md on close)
 
-ISSUE-nnn  (docs/issues/open/ISSUE-nnn-short-name.md → docs/issues/closed/ when resolved)
+ISSUE-nnn  ({{DOCS_DIR}}/issues/open/ISSUE-nnn-short-name.md → {{DOCS_DIR}}/issues/closed/ when resolved)
 ```
 
 Folders follow one pattern: `open/` is work to do, `closed/` is history. Nothing is deleted.
@@ -98,8 +98,8 @@ In [`templates/`](templates/): `EPIC.md`, `STORY.md`, `ISSUE.md`, `MEMO.md`, `CO
 
 An **issue** is anything wrong that is not already a planned task: a bug seen in use, a failing gate on `main`, a wrong assumption in a document, a security concern. Issues are not stories — they are triaged first.
 
-- Anyone (human or agent) files `docs/issues/open/ISSUE-nnn-short-name.md` from `templates/ISSUE.md`. Next free number; never reuse.
-- **Severity:** `S1` blocks play or leaks data · `S2` wrong result for the player · `S3` degraded/cosmetic · `S4` docs/tooling.
+- Anyone (human or agent) files `{{DOCS_DIR}}/issues/open/ISSUE-nnn-short-name.md` from `templates/ISSUE.md`. Next free number; never reuse.
+- **Severity:** `S1` blocks play or leaks data · `S2` wrong result for the player · `S3` degraded/cosmetic · `S4` {{DOCS_DIR}}/tooling.
 - **Diagnosis before fix (CLAUDE.md rule).** QA or Implementer writes the diagnosis in the issue: exact lines, reproduction, blast radius (downstream consumers and sibling code), evidence. No code change until the diagnosis is written.
 - **Routing** by the Tech Lead: fold into an existing `Draft`/`Ready` story, create a new story in the relevant epic, or fix directly as an issue (S1/S2 hotfix, or trivial S3/S4). The issue records where it went.
 - **Closing:** QA verifies with the same evidence standard as a story, writes the verdict, moves the file to `issues/closed/`. If the root cause is a lesson, add it to `LEARNINGS.md`.
@@ -113,4 +113,4 @@ The human approves: PRD and SA changes, epic → Ready for Development, cutting 
 
 | Date | Version | Author | Change |
 |---|---|---|---|
-| YYYY-MM-DD | 1.0 | <author> | Adopted from agentic-project-template |
+| {{DATE}} | 1.0 | {{OWNER}} | Installed with agent-kit |
