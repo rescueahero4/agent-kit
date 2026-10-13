@@ -13,8 +13,8 @@ const KIT_VERSION = JSON.parse(readFileSync(new URL('../package.json', import.me
 const HELP = `agent-kit ${KIT_VERSION} — install a document-driven Claude Code workflow into a project
 
 Usage
-  npx agent-kit [init] [options]   install (interactive unless --yes or no terminal)
-  npx agent-kit update [options]   refresh agents, skills, templates and instruction blocks
+  npx @rescueahero/agent-kit [init] [options]   install (interactive unless --yes or no terminal)
+  npx @rescueahero/agent-kit update [options]   refresh agents, skills, templates and instruction blocks
 
 Init options
   -y, --yes                 quick install with defaults, no questions
@@ -72,7 +72,7 @@ function writeManifest(cwd, opts, files) {
 
 async function init(flags, cwd, interactive) {
   if (existsSync(join(cwd, MANIFEST))) {
-    throw new Error(`agent-kit is already installed here (${MANIFEST}). Run \`npx agent-kit update\` instead.`);
+    throw new Error(`agent-kit is already installed here (${MANIFEST}). Run \`npx @rescueahero/agent-kit update\` instead.`);
   }
   const catalog = loadCatalog();
   if (interactive) p.intro(`agent-kit ${KIT_VERSION}`);
@@ -110,7 +110,7 @@ async function init(flags, cwd, interactive) {
 
 async function update(flags, cwd, interactive) {
   const path = join(cwd, MANIFEST);
-  if (!existsSync(path)) throw new Error(`No ${MANIFEST} here. Run \`npx agent-kit init\` first.`);
+  if (!existsSync(path)) throw new Error(`No ${MANIFEST} here. Run \`npx @rescueahero/agent-kit init\` first.`);
   const { kit, files, ...opts } = JSON.parse(readFileSync(path, 'utf8'));
   const catalog = loadCatalog();
   const ops = planUpdate(desiredOutputs(opts, catalog), cwd, files, { force: flags.force });
