@@ -1,6 +1,6 @@
 # Agent workflow
 
-This project is run with [agent-kit](https://www.npmjs.com/package/agent-kit): **documents are the source of truth** and Claude Code agents do the work through explicit gates.
+This project is run with [agent-kit](https://www.npmjs.com/package/@rescueahero/agent-kit): **documents are the source of truth** and Claude Code agents do the work through explicit gates.
 
 ```
 CLAUDE.md                 agent entry point: read order + hard rules
@@ -35,4 +35,4 @@ Ceremonies: {{CEREMONIES}}. Full detail in [`{{DOCS_DIR}}/WORKFLOW.md`]({{DOCS_D
 2. Review SA-001, write PRD-001 with the Solutions Architect agent, then `/plan-epic EPIC-001`.
 
 ## Updating the framework
-`npx agent-kit update` refreshes agents, skills, templates and this guide. Files you have edited are left alone and listed; `--force` replaces them and keeps a `.agent-kit.bak` copy.
+`npx @rescueahero/agent-kit@latest update` (or `npx github:rescueahero4/agent-kit update`) refreshes agents, skills, templates and this guide. Files you have edited are left alone and listed; `--force` replaces them and keeps a `.agent-kit.bak` copy.

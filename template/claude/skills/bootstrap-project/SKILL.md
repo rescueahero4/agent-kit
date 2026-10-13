@@ -1,8 +1,8 @@
 ---
 name: bootstrap-project
-description: Finish setting up a project after `npx agent-kit init` — drafts SA-001 from existing code (or leaves it as a template for a new project), records the current release, seeds LEARNINGS from predecessor projects, creates the dev branch. Use once as /bootstrap-project.
+description: Finish setting up a project after `npx @rescueahero/agent-kit init` — drafts SA-001 from existing code (or leaves it as a template for a new project), records the current release, seeds LEARNINGS from predecessor projects, creates the dev branch. Use once as /bootstrap-project.
 ---
-Run after `npx agent-kit init` (the repo has `.agent-kit.json` and `{{DOCS_DIR}}/RELEASES.md`). Stop if SA-001's status is no longer `Draft v0.1` — the project is already bootstrapped.
+Run after `npx @rescueahero/agent-kit init` (the repo has `.agent-kit.json` and `{{DOCS_DIR}}/RELEASES.md`). Stop if SA-001's status is no longer `Draft v0.1` — the project is already bootstrapped.
 
 1. Ask the human (AskUserQuestion, one round): does this repo already contain code the project builds on · has a version already shipped (which) · predecessor projects to seed LEARNINGS from (paths, optional).
 2. Existing code → spawn `solutions-architect` told: "draft `{{DOCS_DIR}}/architecture/SA-001-*.md` from the code as it is today — stack, layout, patterns, quality gates (§7), git (§8), guardrails, security (§11). Mark anything inferred rather than read as `(inferred)`. Do not change code." No code → leave SA-001 as the template.
