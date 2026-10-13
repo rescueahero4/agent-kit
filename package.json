@@ -1,0 +1,31 @@
+{
+  "name": "agent-kit",
+  "version": "0.1.0",
+  "description": "Install a document-driven Claude Code workflow — agents, skills and docs — into any project.",
+  "type": "module",
+  "bin": {
+    "agent-kit": "bin/agent-kit.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "template"
+  ],
+  "engines": {
+    "node": ">=20.12"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [
+    "claude-code",
+    "agents",
+    "skills",
+    "workflow",
+    "installer"
+  ],
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@clack/prompts": "^1.8.1"
+  }
+}

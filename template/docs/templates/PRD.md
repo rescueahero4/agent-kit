@@ -36,7 +36,7 @@ Which milestones this version covers; later ones listed as roadmap only.
 
 ## 9.1 Epics
 | Epic | Name | Milestone | Target | State |
-Overview only; detail lives in `docs/epics/open/EPIC-xxx/README.md`.
+Overview only; detail lives in `{{DOCS_DIR}}/epics/open/EPIC-xxx/README.md`.
 
 ## 10. Risks
 | Risk | Impact | Mitigation |
